@@ -491,9 +491,16 @@ footer { padding: 24px 0; text-align: center; font-size: 12px; color: var(--gray
             Replace "photos/albayraq.jpg" with your filename.
             ════════════════════════════════════════
             -->
-            <div class="proj-photo-wrap">
-              <img src="photos/albayraq.jpeg" alt="Albayraq UAV"
-                onerror="this.parentElement.innerHTML='<div class=proj-photo-placeholder><div class=ph-icon>📷</div><p>Add your photo:</p><code>photos/albayraq.jpg</code></div>'">
+            <div class="proj-photo-wrap" style="position:relative;">
+              <div class="gallery" id="gal-albayraq">
+                <img src="photos/albayraq.jpeg" style="width:100%;height:240px;object-fit:contain;display:block;">
+                <img src="photos/Albayraq_pcb.png" style="width:100%;height:240px;object-fit:contain;display:none;">
+              </div>
+              <div style="display:flex;gap:8px;justify-content:center;padding:10px 0;">
+                <button onclick="galPrev('gal-albayraq')" style="background:#1A1A28;border:1px solid #2D2A45;color:#00E5FF;padding:4px 14px;border-radius:6px;cursor:pointer;">&#8592;</button>
+                <span id="gal-albayraq-count" style="font-size:12px;color:#606070;align-self:center;">1 / 2</span>
+                <button onclick="galNext('gal-albayraq')" style="background:#1A1A28;border:1px solid #2D2A45;color:#00E5FF;padding:4px 14px;border-radius:6px;cursor:pointer;">&#8594;</button>
+              </div>
             </div>
             <div class="proj-stats">
               <div class="stat"><div class="stat-v">3.2m</div><div class="stat-l">Wingspan</div></div>
@@ -744,9 +751,18 @@ footer { padding: 24px 0; text-align: center; font-size: 12px; color: var(--gray
         </div>
         <div class="proj-detail">
           <div class="proj-detail-inner">
-            <div class="proj-photo-wrap">
-              <img src="photos/hackerspace.jpeg" alt="Hackerspace CNC and printer work"
-                onerror="this.parentElement.innerHTML='<div class=proj-photo-placeholder><div class=ph-icon>📷</div><p>Add your photo:</p><code>photos/hackerspace.jpg</code></div>'">
+            <div class="proj-photo-wrap" style="position:relative;">
+              <div class="gallery" id="gal-hackerspace">
+                <img src="photos/hackerspace.jpeg" style="width:100%;height:240px;object-fit:contain;display:block;">
+                <img src="photos/hackerspace_pcb.png" style="width:100%;height:240px;object-fit:contain;display:none;">
+                <img src="photos/hackerspace_3d.jpeg" style="width:100%;height:240px;object-fit:contain;display:none;">
+                <img src="photos/hackerspace_cnc.jpeg" style="width:100%;height:240px;object-fit:contain;display:none;">
+              </div>
+              <div style="display:flex;gap:8px;justify-content:center;padding:10px 0;">
+                <button onclick="galPrev('gal-hackerspace')" style="background:#1A1A28;border:1px solid #2D2A45;color:#00E5FF;padding:4px 14px;border-radius:6px;cursor:pointer;">&#8592;</button>
+                <span id="gal-hackerspace-count" style="font-size:12px;color:#606070;align-self:center;">1 / 4</span>
+                <button onclick="galNext('gal-hackerspace')" style="background:#1A1A28;border:1px solid #2D2A45;color:#00E5FF;padding:4px 14px;border-radius:6px;cursor:pointer;">&#8594;</button>
+              </div>
             </div>
             <div class="proj-stats">
               <div class="stat"><div class="stat-v">4th</div><div class="stat-l">Axis added to CNC</div></div>
@@ -1165,3 +1181,20 @@ document.querySelectorAll('.tl').forEach((el, i) => { el.dataset.delay = i * 100
 </script>
 </body>
 </html>
+/* ── GALLERY ──────────────────────────────────────────── */
+function galNext(id) {
+  const imgs = document.querySelectorAll('#' + id + ' img');
+  let cur = [...imgs].findIndex(i => i.style.display !== 'none');
+  imgs[cur].style.display = 'none';
+  const next = (cur + 1) % imgs.length;
+  imgs[next].style.display = 'block';
+  document.getElementById(id + '-count').textContent = (next + 1) + ' / ' + imgs.length;
+}
+function galPrev(id) {
+  const imgs = document.querySelectorAll('#' + id + ' img');
+  let cur = [...imgs].findIndex(i => i.style.display !== 'none');
+  imgs[cur].style.display = 'none';
+  const prev = (cur - 1 + imgs.length) % imgs.length;
+  imgs[prev].style.display = 'block';
+  document.getElementById(id + '-count').textContent = (prev + 1) + ' / ' + imgs.length;
+}
