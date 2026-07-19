@@ -23,8 +23,8 @@ Electrical Engineer specializing in PCB design, embedded systems, and electrical
 | 02 | **Bunyan — Modular Self-Assembling Robot** | Robotics / Capstone | 🏆 1st Place HTU Capstone Expo 2026 · Digital twin · Novel magnetic joint |
 | 03 | **National SUMO Robot Contest** | Leadership / Competition | Middle East's largest · 200+ teams · 1,000+ attendees · 4-year involvement |
 | 04 | **Autonomous Ground Vehicle** | Embedded / Navigation | IMU sensor fusion · Complementary & Kalman filter · GPS navigation |
-| 05 | **Fixed-Wing UAV Training Programme** | UAV / Education | 5-week curriculum designed from scratch · 20+ students · Code Circle / IEC Schools |
-| 06 | **CNC 4th-Axis Modification** | Hardware Engineering | Added 4th axis to 3-axis machine via relay switching · Still in active use |
+| 05 | **Fixed-Wing UAV Training Programme** | UAV / Education | 5-week program · 20+ students · Code Circle / IEC Schools |
+| 06 | **CNC 4th-movment to a 3-axis machine** | Hardware Engineering | Added 4th movment to 3-axis machine via relay switching · Still in active use |
 | 07 | **PLC/HMI & Industry 4.0 SCADA** | Industrial Automation | Siemens S7-1200 · Node-RED · ThingSpeak · Pharma blister line upgrade |
 | 08 | **HTU Robotics Alliance** | Club Founding / Robotics | First robotics club at HTU · Founded from zero · Line follower competition |
 
