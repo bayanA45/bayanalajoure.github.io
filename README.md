@@ -51,5 +51,5 @@ Electrical Engineer specializing in PCB design, embedded systems, and electrical
 
 ## Certifications
 
-- CSWA — Certified SolidWorks Associate · Dassault Systèmes
+- SOLIDWORKS Additive Manufacturing Associate (CSWA-AM) · Dassault Systèmes
 ---
